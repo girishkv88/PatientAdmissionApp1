@@ -51,5 +51,23 @@ namespace PatientAdmissionApp
 
             }
         }
+
+        private void btnDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            var dashboardControl = new PatientDashboardControl();   
+            var dashboardWindow = Window.GetWindow(this) as MainWindow;
+
+            if (dashboardWindow != null)
+            {
+                dashboardWindow.MainContent.Content = dashboardControl;
+
+            }
+
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
