@@ -10,7 +10,10 @@ namespace PatientAdmissionApp
     public interface IPatient
     {
         ObservableCollection<PatientModel> Patients { get; }    
-        void RegisterPatient(PatientModel model);   
+        void RegisterPatient(PatientModel patient);  
+        void updateAppointmentStatus(PatientModel patient, string status);
+
+        IList<PatientModel> GetRegisteredPatients();   
 
         event EventHandler PatientUpdated;
 
